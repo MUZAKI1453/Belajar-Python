@@ -1,91 +1,61 @@
-# operator dalam bentuk method
+# format string
 
-# merubah case dari string
+# contoh generic
+# string
+nama = "ucup"
+format_str = f"hello {nama}"
+print(format_str)
 
-# merubah semua string menjadi upper case (huruf besar)
-p = "balap"
-print("normal     = " + p)
-p = p.upper()
-print("gak normal = " + p)
+# angka
+angka = 0.98
+format_str = f"angka = {angka}"
+print(format_str)
 
-# merubah semua string menjadi lower case (huruf kecil)
-p = "MANCING"
-print("normal     = " + p)
-p = p.lower()
-print("gak normal = " + p)
+# boolean
+boolean = True
+format_str = f"boolean = {boolean}"
 
-# pengecekan dengan isX method
-# contoh pengecekan lower case
-p = "balap"
-apakah_lower = p.islower() # hasilnya nilai boolean
-print(p + (" is lower = ") + str(apakah_lower))
-apakah_upper = p.isupper() # hasilnya boolean
-print(p + (" is upper = ") + str(apakah_upper))
+# bilangan dengan ordo ribuan
+angka = 30000
+format_str = f"ribuan {angka: ,}"
+print(format_str)
 
-# isalpha()   <-- untuk mengecek semuanya huruf
-# isalnum()   <-- untuk mengecek huruf dan angka saja
-# isdecimal() <-- untuk mengecek angka saja
-# isspace()   <-- untuk mengecek spasi, tab, newline \n
-# istitle()   <-- untuk mengecek semua kata dimulai dengan huruf besar
+# bilangan desimal
+angka = 34.56433 # --> menampilkan angka dibelakang koma
+format_str = f"desimal = {angka:.2f}"
+print(format_str)
 
-k = "Aku"
-apakah_isalpha = k.isalpha()
-print(k + (" isalpha = ") + str(apakah_isalpha))
+# menampilkan tanda + dan -
+angka_minus  = -9
+angka_plus   = 10.231
+format_minus = f"minus = {angka_minus:-d}"
+format_plus  = f"plus  = {angka_plus:+.2f}"
 
-apakah_isalnum = k.isalnum()
-print(k + (" isalnum = ") + str(apakah_isalnum))
-
-apakah_isdecimal = k.isdecimal()
-print(k + (" isdecimal = ") + str(apakah_isdecimal))
-
-apakah_isspace = k.isspace()
-print(k + (" isspace = ") + str(apakah_isspace))
-
-apakah_istitle = k.istitle()
-print(k + (" istitle = ") + str(apakah_istitle))
-
-# mengecek apakah komponen string diawali atau diakhiri dengan string tsb ?
-# startswith
-cek_start = "python mudah".startswith("python")
-print("start = " + str(cek_start))
-
-# endswith
-cek_end = "python mudah".endswith("mudah")
-print("end = " + str(cek_end))
-
-# penggabungan komponen string pada tipe data list dengan join(), split()
-pisah    = ['aku', 'sayang', 'kamu']
-gabungan = ','.join(pisah) # ini dipisahkan oleh koma
-print(pisah)
-print(gabungan)
-
-gabungan = ' '.join(pisah) # ini dipisahkan oleh spasi
-print(gabungan)
-
-gabungan = "akusayangkamu"
-print(gabungan.split('sayang'))
+print(format_minus)
+print(format_plus)
 
 
-# alokasi karakter rjust(), ljust(), center()
-# rjust() / rata kanan, right justify
-kanan = "kanan".rjust(10)
-print("'" + kanan + "'")
+# memformat persen
+persen = 0.07
+format_persen = f"persen = {persen:.2%}"
+print(format_persen)
 
-# ljust() / rata kiri, left justify
-kiri = "kiri".ljust(10)
-print("'" + kiri + "'")
+# melakukan operasi aritmatika didalam placeholder
+harga = 20000
+jumlah = 2
+format_string = f"harga total = rp. {harga * jumlah}"
+print(format_string)
 
-# center() / rata tengah, center justify
-tengah = "tengah".center(10)
-print("'" + tengah + "'")
+# format angka lain (binary, octal, hexadecimal)
 
+angka = 225
+format_binary = f"binary = {bin(angka)}"
+format_octal  = f"octal  = {oct(angka)}"
+format_hex    = f"hex    = {hex(angka)}"
 
-
-
-
-
-
-
+print(format_binary)
+print(format_octal)
+print(format_hex)
 
 
 
